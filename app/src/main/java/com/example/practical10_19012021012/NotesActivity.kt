@@ -5,6 +5,7 @@ import android.app.*
 import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
+import android.graphics.drawable.AnimationDrawable
 import android.icu.text.SimpleDateFormat
 import android.icu.util.Calendar
 import android.os.Build
@@ -66,6 +67,12 @@ class NotesActivity : AppCompatActivity() {
         fabAddNote.setOnClickListener {
             showAddNoteDialog(lvAdapter)
         }
+
+
+        val ivPhotos = findViewById<View>(R.id.iv_photos_notes_activity)
+        ivPhotos.setBackgroundResource(R.drawable.photos_animation_list)
+        val photoAnim = ivPhotos.background as AnimationDrawable
+        photoAnim.start()
     }
 
 
