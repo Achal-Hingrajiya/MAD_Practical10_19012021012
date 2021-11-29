@@ -5,6 +5,7 @@ import android.app.AlarmManager
 import android.app.PendingIntent
 import android.app.TimePickerDialog
 import android.content.Intent
+import android.graphics.drawable.AnimationDrawable
 import android.icu.text.SimpleDateFormat
 import android.icu.util.Calendar
 import android.os.Build
@@ -67,6 +68,7 @@ class DashboardActivity : AppCompatActivity() {
             }
         }
 
+
     logoutBtn.setOnClickListener {
             Toast.makeText(this, "Logged Out!", Toast.LENGTH_SHORT).show()
             LoginInfo.logout()
@@ -78,7 +80,21 @@ class DashboardActivity : AppCompatActivity() {
         btnSetAlarm.setOnClickListener {
             showTimerDialog()
         }
+
+
+        val vHeart = findViewById<View>(R.id.iv_heart)
+        vHeart.setBackgroundResource(R.drawable.heart_animation_list)
+        val heartAnim = vHeart.background as AnimationDrawable
+        heartAnim.start()
+
+        val ivPhotos = findViewById<View>(R.id.iv_photos)
+        ivPhotos.setBackgroundResource(R.drawable.photos_animation_list)
+        val photoAnim = ivPhotos.background as AnimationDrawable
+        photoAnim.start()
+
+
     }
+
 
 
     @RequiresApi(Build.VERSION_CODES.N)
