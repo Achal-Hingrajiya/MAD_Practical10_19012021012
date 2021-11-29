@@ -16,7 +16,7 @@ class LoginActivity : AppCompatActivity() {
 
         if (LoginInfo.logged_in){
             Toast.makeText(this, "Welcome back, ${LoginInfo.full_name}!", Toast.LENGTH_SHORT).show()
-            Intent(this, DashboardActivity :: class.java).apply {
+            Intent(this, SplashActivity :: class.java).apply {
                 startActivity(this)
             }
         }
@@ -42,7 +42,7 @@ class LoginActivity : AppCompatActivity() {
                     if (LoginInfo.login(email, password)){
                         Toast.makeText(this, "Logged In Successfully!", Toast.LENGTH_SHORT).show()
 
-                        Intent(this, DashboardActivity :: class.java).apply {
+                        Intent(this, SplashActivity :: class.java).apply {
                             startActivity(this)
                         }
                     }
